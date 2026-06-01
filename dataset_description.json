@@ -1,0 +1,19 @@
+{
+  "Name": "BICAN: Meta-collection",
+  "Description": "This is a prototype showcase of a BIDS-Study organization of BICAN meta-collections on DANDI.",
+  "BIDSVersion": "1.10.1",
+  "DatasetType": "study",
+  "Authors": [
+    "Baker, Pamela",
+    "Baker, Cody",
+  ],
+  "Funding": [
+    "NIH 5R24MH117295-07"
+  ],
+  "License": "CC-BY-4.0",
+  "SourceDatasets": [
+    {
+      "URL": "https://dandiarchive.org/dandiset/XYZ..."
+    }
+  ]
+}
