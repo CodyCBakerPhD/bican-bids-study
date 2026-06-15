@@ -1,0 +1,38 @@
+{
+  "session_id": {
+    "Description": "A session identifier of the form ses-<label>, matching a session found in the dataset. There MUST be exactly one row for each session. Values in session_id MUST be unique."
+  },
+  "dissociated_cell_sample_nhash_id": {
+    "Description": "Identifier (NHash ID) of the dissociated cell sample profiled in this session.",
+    "LongName": "Dissociated Cell Sample NHash ID"
+  },
+  "tissue_sample_brain_structure_id": {
+    "Description": "Ontology identifier for the brain structure from which the tissue sample was taken.",
+    "LongName": "Tissue Sample Brain Structure ID",
+    "TermURL": "http://api.brain-map.org/api/v2/data/Structure/10268"
+  },
+  "dandi_file_uri": {
+    "Description": "DANDI Archive asset download URI for the data file associated with this session.",
+    "LongName": "DANDI File URI"
+  },
+  "nemo_fastq_file_uris": {
+    "Description": "List of NeMO Archive URIs for the raw FASTQ file(s) associated with this session.",
+    "LongName": "NeMO Fastq File URIs (list)"
+  },
+  "bil_tif_file_uri": {
+    "Description": "Brain Image Library (BIL) URI to the folder containing the TIF image data for this session.",
+    "LongName": "BIL TIF File URI (folder)"
+  },
+  "bil_swc_file_uri": {
+    "Description": "Brain Image Library (BIL) URI to the folder containing the SWC reconstruction data for this session.",
+    "LongName": "BIL SWC File URI (folder)"
+  },
+  "library_aliquot_nhash_id": {
+    "Description": "Optional identifier (NHash ID) of the library aliquot associated with this session.",
+    "LongName": "Library Aliquot NHash ID (Optional)"
+  },
+  "dissociated_cell_sample_local_name": {
+    "Description": "Optional human-readable local name of the dissociated cell sample.",
+    "LongName": "Dissociated Cell Sample Local Name (Optional)"
+  }
+}
