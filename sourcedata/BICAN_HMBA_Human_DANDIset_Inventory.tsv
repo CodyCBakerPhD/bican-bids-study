@@ -1,4 +1,4 @@
-DANDIset_ID	URL	Upload_Quarter	Owner	DANDI_Publication_Status	Program_Grant	Number_of_Cells
+dandiset_id  url  upload_quarter	owner  dandi_publication_status  program_grant  nuumber_of_cells
 000769	https://dandiarchive.org/dandiset/000769	23Q4	Sherif Soliman	Published	BICAN HMBA	177
 000933	https://dandiarchive.org/dandiset/000933	24Q1	Sherif Soliman	Published	BICAN HMBA	28
 001359	https://dandiarchive.org/dandiset/001359	25Q1	Sherif Soliman, Nicholas Mei, Limary Gonzalez	Published	BICAN HMBA	391
