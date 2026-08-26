@@ -1,0 +1,63 @@
+{
+    "participants_id": {
+        "Description": "A unique identifier for this participant at DANDI.",
+        "LongName": "Participants ID"
+    },
+    "donor_nhash_id": {
+        "Description": "The unique NHash identifier for this participant (Donor) at NIMP Analytics (see https://brain-specimenportal.org/nimp_analytics).",
+        "LongName": "Donor NHash ID"
+    },
+    "donor_local_id": {
+        "Description": "LIMS specimen identifier of the donor animal. Corresponds to donor_local_id in mapping.tsv.",
+        "LongName": "Donor Local ID"
+    },
+    "species_name": {
+        "Description": "The common name for the species of the participant.",
+        "LongName": "Species Name"
+    },
+    "species_ncbi_taxon": {
+        "Description": "The NCBI Taxonomy identifier for the species of the participant.",
+        "LongName": "Species NCBI Taxon"
+    },
+    "sex_at_birth": {
+        "Description": "Sex of the participant.",
+        "Levels": {
+            "Male": "male",
+            "Female": "female"
+        },
+        "LongName": "Sex at Birth"
+    },
+    "age_at_death": {
+        "Description": "Age of the participant",
+        "Units": "day",
+        "LongName": "Age at Death"
+    },
+    "injection_target_region": {
+        "Description": "Brain region targeted for stereotaxic injection of retrograde tracer used to label the projection-defined population profiled in this participant.",
+        "LongName": "Injection Target Region"
+    },
+    "injection_target_brain_structure_id_homba": {
+        "Description": "HOMBA ontology identifier for the injection_target_region.",
+        "LongName": "Injection Target Brain Structure ID (HOMBA)",
+        "TermURL": "https://github.com/AllenInstitute/CCF-MAP/releases/download/v1.1.3/HOMBA.csv"
+    },
+    "injection_target_brain_structure_name_homba": {
+        "Description": "HOMBA ontology name for the injection_target_region.",
+        "LongName": "Injection Target Brain Structure Name (HOMBA)",
+        "TermURL": "https://github.com/AllenInstitute/CCF-MAP/releases/download/v1.1.3/HOMBA.csv"
+    },
+    "injection_target_brain_structure_id_ccf": {
+        "Description": "Allen Common Coordinate Framework (CCF-2020) ontology identifier for the injection_target_region. Left blank where the target (e.g. spinal cord) falls outside the CCF mouse brain atlas.",
+        "LongName": "Injection Target Brain Structure ID (CCF-2020)",
+        "TermURL": "s3://allen-brain-cell-atlas/metadata/Allen-CCF-2020/20230630/parcellation_term.csv"
+    },
+    "injection_target_brain_structure_name_ccf": {
+        "Description": "Allen Common Coordinate Framework (CCF-2020) ontology name for the injection_target_region. Left blank where the target (e.g. spinal cord) falls outside the CCF mouse brain atlas.",
+        "LongName": "Injection Target Brain Structure Name (CCF-2020)",
+        "TermURL": "s3://allen-brain-cell-atlas/metadata/Allen-CCF-2020/20230630/parcellation_term.csv"
+    },
+    "nimp_resource_visualizer_url": {
+        "Description": "The URL for this participant/Donor in the NIMP Analytics Resource Visualizer.",
+        "LongName": "NIMP Resource Visualizer URL"
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "dandiset_id": {
+        "Description": "Unique ID for the source dataset at the DANDI archive."
+    },
+    "url": {
+        "Description": "URL for the source dataset at the DANDI archive."
+    },
+    "bican_subprogram": {
+        "Description": "The name of the BICAN subprogram to which the source dataset belongs."
+    },
+    "grant_number": {
+        "Description": "The grant number for the funding associated with the source dataset."
+    },
+    "number_of_cells": {
+        "Description": "The total number of cells in the source dataset at DANDI. Note that the source dataset contains additional cells that are not included in this publication dataset."
+    }
+}

@@ -1,0 +1,61 @@
+{
+  "session_id": {
+    "Description": "A session identifier of the form ses-<label>, indicating the recording session (NWB file) for this cell in the dataset."
+  },
+  "dissociated_cell_sample_nhash_id": {
+    "Description": "Identifier (NHash ID) at NIMP Analytics (https://brain-specimenportal.org/nimp_analytics) of the Dissociated Cell Sample profiled in this session.",
+    "LongName": "Dissociated Cell Sample NHash ID"
+  },
+  "dissociated_cell_sample_local_name": {
+    "Description": "Human-readable local name of the Dissociated Cell Sample at NIMP Analytics.",
+    "LongName": "Dissociated Cell Sample Local Name"
+  },
+  "tissue_sample_brain_structure_id_homba": {
+    "Description": "HOMBA ontology identifier for the brain structure from which the tissue sample was taken.",
+    "LongName": "Tissue Sample Brain Structure ID (HOMBA)",
+    "TermURL": "https://github.com/AllenInstitute/CCF-MAP/releases/download/v1.1.3/HOMBA.csv"
+  },
+  "tissue_sample_brain_structure_name_homba": {
+    "Description": "HOMBA ontology name for the brain structure from which the tissue sample was taken.",
+    "LongName": "Tissue Sample Brain Structure Name (HOMBA)",
+    "TermURL": "https://github.com/AllenInstitute/CCF-MAP/releases/download/v1.1.3/HOMBA.csv"
+  },
+  "tissue_sample_brain_structure_id_ccf": {
+    "Description": "Allen Common Coordinate Framework (CCF-2020) ontology identifier for the brain structure from which the tissue sample was taken.",
+    "LongName": "Tissue Sample Brain Structure ID (CCF-2020)",
+    "TermURL": "s3://allen-brain-cell-atlas/metadata/Allen-CCF-2020/20230630/parcellation_term.csv"
+  },
+  "tissue_sample_brain_structure_name_ccf": {
+    "Description": "Allen Common Coordinate Framework (CCF-2020) ontology name for the brain structure from which the tissue sample was taken.",
+    "LongName": "Tissue Sample Brain Structure Name (CCF-2020)",
+    "TermURL": "s3://allen-brain-cell-atlas/metadata/Allen-CCF-2020/20230630/parcellation_term.csv"
+  },
+  "library_aliquot_nhash_id": {
+    "Description": "Unique identifier (NHash ID) of the Library Aliquot associated with this recorded cell.",
+    "LongName": "Library Aliquot NHash ID"
+  },
+  "barcoded_cell_sample_nhash_id": {
+    "Description": "Unique identifier (NHash ID) of the Barcoded Cell Sample associated with this recorded cell.",
+    "LongName": "Barcoded Cell Sample NHash ID"
+  },
+  "donor_local_id": {
+    "Description": "LIMS specimen identifier of the donor animal from which this cell was obtained. Corresponds to donor_local_id in participants.tsv.",
+    "LongName": "Donor Local ID"
+  },
+  "dandi_file_url": {
+    "Description": "DANDI Archive asset download URL for the NWB data file associated with this session.",
+    "LongName": "DANDI File URL"
+  },
+  "nimp_resource_visualizer_url": {
+    "Description": "The URL at the NIMP Analytics Resource Visualizer for the Dissociated Cell Sample associated with this session.",
+    "LongName": "NIMP Resource Visualizer URL"
+  },
+  "nemo_portal_url": {
+    "Description": "NeMO Archive URL to the portal download page for the FASTQ files associated with this cell.",
+    "LongName": "NeMO Portal URL"
+  },
+  "nemo_assets_url": {
+    "Description": "NeMO Archive URL to the asset landing page for the Library Aliquot associated with this cell.",
+    "LongName": "NeMO Assets URL"
+  }
+}
