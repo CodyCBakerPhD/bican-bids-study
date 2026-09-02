@@ -65,3 +65,9 @@ When creating a new Dandiset, `name` and `description` are required, either here
 
 See `scripts/examples/metadata.json` for a starting point with `name`, `description`,
 `license`, `keywords`, and `contributor` (people and a funder).
+
+## Tests
+
+`tests/` has a golden-output integration test that runs this script against the real
+DANDI sandbox and checks the result against a committed expected-output file. See
+`tests/README.md`.
