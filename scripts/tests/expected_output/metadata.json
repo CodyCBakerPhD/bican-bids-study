@@ -1,10 +1,10 @@
 {
   "schemaKey": "Dandiset",
   "name": "dandiset_setup.py sandbox fixture",
-  "description": "Ephemeral Dandiset created by the dandiset_setup.py golden-output test. Safe to delete.",
+  "description": "Ephemeral Dandiset created by the dandiset_setup.py expected-output test. Safe to delete.",
   "keywords": [
     "dandiset-setup-test",
-    "golden-output-fixture"
+    "expected-output-fixture"
   ],
   "license": [
     "spdx:CC-BY-4.0"

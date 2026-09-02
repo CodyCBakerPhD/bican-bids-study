@@ -68,6 +68,6 @@ See `scripts/examples/metadata.json` for a starting point with `name`, `descript
 
 ## Tests
 
-`tests/` has a golden-output integration test that runs this script against the real
+`tests/` has an expected-output integration test that runs this script against the real
 DANDI sandbox and checks the result against a committed expected-output file. See
 `tests/README.md`.

@@ -1,18 +1,18 @@
 """
-Golden-output integration test for ``dandiset_setup.py``, run against the
+Expected-output integration test for ``dandiset_setup.py``, run against the
 DANDI *sandbox* archive (https://sandbox.dandiarchive.org) — never
 production.
 
 Same idea as the fixture pattern at
-https://github.com/brain-bbqs/data-ingest-task-force/tree/main/labs/kemere/tests:
-fixed input fixtures, a real run of the code under test, and the result
-compared against a committed "golden" expected-output file. Adapted here for
-a live API instead of an offline conversion: fields the sandbox itself
-assigns (Dandiset id, identifier, schemaVersion, timestamps, assetsSummary,
-...) can't be predicted ahead of time, so the comparison in
-``_golden.assert_subset`` is a subset check — every field we asked the
-script to set must come back exactly as sent — rather than full-document
-equality.
+https://github.com/brain-bbqs/data-ingest-task-force/tree/main/labs/kemere/tests
+(sometimes called "golden file" testing): fixed input fixtures, a real run
+of the code under test, and the result compared against a committed
+expected-output file. Adapted here for a live API instead of an offline
+conversion: fields the sandbox itself assigns (Dandiset id, identifier,
+schemaVersion, timestamps, assetsSummary, ...) can't be predicted ahead of
+time, so the comparison in ``_helpers.assert_subset`` is a subset check —
+every field we asked the script to set must come back exactly as sent —
+rather than full-document equality.
 
 Requires a real sandbox account:
 
@@ -25,10 +25,10 @@ deleted again in a ``finally`` block, whether the test passes or fails.
 
 Owner-adding is exercised only when ``DANDI_SANDBOX_TEST_USERNAME`` is also
 set, to a *second* real sandbox account distinct from the one running the
-test. "Add a user" is not golden-tested against a fixed fixture file the way
-metadata is: who the test's creator is, and who is available to add as an
-owner, both depend on whose credentials the test runs with, so there is no
-fixed expected output to commit — the test asserts the invariant instead
+test. "Add a user" is not tested against a fixed expected-output file the
+way metadata is: who the test's creator is, and who is available to add as
+an owner, both depend on whose credentials the test runs with, so there is
+no fixed expected output to commit — the test asserts the invariant instead
 (the new user is added, nobody already there is removed).
 """
 
@@ -45,7 +45,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))  # for `import dand
 import dandiset_setup  # noqa: E402
 from dandi.dandiapi import DandiAPIClient  # noqa: E402
 
-from _golden import EXPECTED_OUTPUT, FIXTURES, assert_subset, load_json  # noqa: E402
+from _helpers import EXPECTED_OUTPUT, FIXTURES, assert_subset, load_json  # noqa: E402
 
 pytestmark = pytest.mark.skipif(
     not os.environ.get("DANDI_SANDBOX_API_KEY"),
@@ -62,13 +62,13 @@ def sandbox_client():
 def _unique_metadata() -> dict:
     """The metadata fixture, with a unique suffix so repeated runs don't pile
     up Dandisets with identical names while still exercising the same
-    fields the golden file checks."""
+    fields the expected-output file checks."""
     metadata = load_json(FIXTURES / "metadata.json")
     metadata["name"] = f"{metadata['name']} [{uuid.uuid4().hex[:8]}]"
     return metadata
 
 
-def test_create_and_update_matches_golden_metadata(sandbox_client):
+def test_create_and_update_matches_expected_metadata(sandbox_client):
     metadata = _unique_metadata()
 
     dandiset = dandiset_setup.create_dandiset(
@@ -79,7 +79,7 @@ def test_create_and_update_matches_golden_metadata(sandbox_client):
 
         actual = dandiset.get_raw_metadata()
         expected = load_json(EXPECTED_OUTPUT / "metadata.json")
-        expected["name"] = metadata["name"]  # golden file uses the un-suffixed name
+        expected["name"] = metadata["name"]  # expected-output file uses the un-suffixed name
         assert_subset(expected, actual, context="Dandiset metadata")
     finally:
         dandiset.delete()

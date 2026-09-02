@@ -1,15 +1,16 @@
-# Golden-output test for `dandiset_setup.py`
+# Expected-output test for `dandiset_setup.py`
 
-A basic example of testing against a live API with a committed "golden"
+A basic example of testing against a live API with a committed
 expected-output file, in the style of
 [`labs/kemere/tests`](https://github.com/brain-bbqs/data-ingest-task-force/tree/main/labs/kemere/tests)
-in the `brain-bbqs/data-ingest-task-force` repo: fixed input fixtures, a real
-run of the code under test, and the result compared against a committed
-expected-output file. The difference here is the code under test calls a
-live API (the DANDI **sandbox**, never production) rather than converting
-files on disk, so the golden comparison is a subset check on the fields we
-control instead of full-document equality — see the docstrings in
-`_golden.py` and `test_dandiset_setup_sandbox.py` for why.
+in the `brain-bbqs/data-ingest-task-force` repo (sometimes called "golden
+file" testing): fixed input fixtures, a real run of the code under test, and
+the result compared against a committed expected-output file. The
+difference here is the code under test calls a live API (the DANDI
+**sandbox**, never production) rather than converting files on disk, so the
+comparison is a subset check on the fields we control instead of
+full-document equality — see the docstrings in `_helpers.py` and
+`test_dandiset_setup_sandbox.py` for why.
 
 ## Layout
 
@@ -18,8 +19,8 @@ tests/
 ├── fixtures/
 │   └── metadata.json          # input handed to dandiset_setup.py
 ├── expected_output/
-│   └── metadata.json          # golden: what should come back afterwards
-├── _golden.py                 # shared load/compare helpers
+│   └── metadata.json          # what should come back afterwards
+├── _helpers.py                # shared load/compare helpers
 ├── test_dandiset_setup_sandbox.py
 └── README.md
 ```
@@ -49,17 +50,17 @@ export DANDI_SANDBOX_TEST_USERNAME=some-other-sandbox-username
 pytest scripts/tests -v
 ```
 
-That sub-test does not use a golden file — see the docstring in
+That sub-test does not use an expected-output file — see the docstring in
 `test_dandiset_setup_sandbox.py` for why "who gets added" can't be pinned to
 a fixed fixture — it asserts the invariant instead: the new user ends up an
 owner, and nobody who was already an owner is removed.
 
-## Updating the golden file
+## Updating the expected-output file
 
 `expected_output/metadata.json` should equal `fixtures/metadata.json`
 (the fields the script is asked to set, echoed back unchanged) plus
 `"schemaKey": "Dandiset"`, which the server always adds. If you add a field
-to the input fixture, add the same key/value to the golden file.
+to the input fixture, add the same key/value to the expected-output file.
 
 ## A note on this example
 

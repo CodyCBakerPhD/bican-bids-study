@@ -1,7 +1,7 @@
-"""Shared helpers for the DANDI-sandbox golden-output test.
+"""Shared helpers for the DANDI-sandbox expected-output test.
 
-Kept in one place so the test and the golden fixtures it reads are
-guaranteed to be interpreted the same way.
+Kept in one place so the test and the fixtures it reads are guaranteed to
+be interpreted the same way.
 """
 
 from __future__ import annotations
@@ -26,7 +26,7 @@ def assert_subset(expected: dict[str, Any], actual: dict[str, Any], *, context: 
     This is a subset check, not full-document equality: the live sandbox
     response also carries server-assigned fields (id, identifier,
     schemaVersion, timestamps, assetsSummary, ...) that this basic example
-    does not attempt to predict or pin down in the golden file.
+    does not attempt to predict or pin down in the expected-output file.
     """
     missing = [key for key in expected if key not in actual]
     assert not missing, f"{context}: missing keys {missing} (actual keys: {sorted(actual)})"
