@@ -1,0 +1,40 @@
+{
+  "name": "BICAN: Meta-collection",
+  "description": "This is a prototype showcase of a BIDS-Study organization of BICAN meta-collections on DANDI.",
+  "license": [
+    "spdx:CC-BY-4.0"
+  ],
+  "keywords": [
+    "BICAN",
+    "BIDS",
+    "meta-collection"
+  ],
+  "contributor": [
+    {
+      "schemaKey": "Person",
+      "name": "Baker, Pamela",
+      "roleName": [
+        "dcite:ContactPerson",
+        "dcite:DataManager"
+      ],
+      "includeInCitation": true
+    },
+    {
+      "schemaKey": "Person",
+      "name": "Baker, Cody",
+      "roleName": [
+        "dcite:DataCurator"
+      ],
+      "includeInCitation": true
+    },
+    {
+      "schemaKey": "Organization",
+      "name": "National Institute of Mental Health",
+      "roleName": [
+        "dcite:Funder"
+      ],
+      "awardNumber": "5R24MH117295-07",
+      "includeInCitation": false
+    }
+  ]
+}
