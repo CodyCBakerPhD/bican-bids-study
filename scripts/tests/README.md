@@ -33,6 +33,15 @@ export DANDI_SANDBOX_API_KEY=...    # sandbox.dandiarchive.org -> account -> API
 pytest scripts/tests -v
 ```
 
+### In CI
+
+`.github/workflows/dandiset-setup-sandbox-tests.yml` runs this on pushes to `main` and on
+pull requests that touch `scripts/**`, using `DANDI_SANDBOX_API_KEY` (and optionally
+`DANDI_SANDBOX_TEST_USERNAME`) from repository secrets — this environment has no outbound
+access to `sandbox.dandiarchive.org`, so add those secrets in the repo's GitHub settings
+for it to actually exercise the sandbox rather than just skipping. Fork PRs don't get
+repository secrets, so the workflow still runs and passes there, with the tests skipped.
+
 Without `DANDI_SANDBOX_API_KEY` set, the whole module is skipped rather than
 failing — useful for CI that doesn't have sandbox credentials configured.
 
