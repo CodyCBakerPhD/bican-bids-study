@@ -1,0 +1,3 @@
+username	name	note
+CodyCBakerPhD	Cody Baker	Extra columns like these are ignored; only 'username' is read
+pamela-baker	Pamela Baker	Usernames are GitHub logins (that is what DANDI uses)
