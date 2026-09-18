@@ -1,0 +1,4 @@
+[codespell]
+# 'sherif' is a contributor's given name, not a misspelling of 'sheriff'
+ignore-words-list = sherif
+skip = ./.git,./LICENSES
