@@ -1,0 +1,10 @@
+version = 1
+SPDX-PackageName = "bican-bids-study"
+SPDX-PackageSupplier = "Cody Baker"
+SPDX-PackageDownloadLocation = "https://github.com/CodyCBakerPhD/bican-bids-study"
+
+[[annotations]]
+path = "**"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2026 Cody Baker"
+SPDX-License-Identifier = "CC-BY-4.0"
