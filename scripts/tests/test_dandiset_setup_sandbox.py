@@ -41,7 +41,9 @@ from pathlib import Path
 
 import pytest
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1]))  # for `import dandiset_setup`
+sys.path.insert(
+    0, str(Path(__file__).resolve().parents[1])
+)  # for `import dandiset_setup`
 import dandiset_setup  # noqa: E402
 from dandi.dandiapi import DandiAPIClient  # noqa: E402
 
@@ -55,7 +57,9 @@ pytestmark = pytest.mark.skipif(
 
 @pytest.fixture
 def sandbox_client():
-    with DandiAPIClient.for_dandi_instance("dandi-sandbox", authenticate=True) as client:
+    with DandiAPIClient.for_dandi_instance(
+        "dandi-sandbox", authenticate=True
+    ) as client:
         yield client
 
 
@@ -72,14 +76,20 @@ def test_create_and_update_matches_expected_metadata(sandbox_client):
     metadata = _unique_metadata()
 
     dandiset = dandiset_setup.create_dandiset(
-        sandbox_client, metadata["name"], metadata["description"], embargo=False, dry_run=False
+        sandbox_client,
+        metadata["name"],
+        metadata["description"],
+        embargo=False,
+        dry_run=False,
     )
     try:
         dandiset_setup.update_metadata(dandiset, metadata, dry_run=False)
 
         actual = dandiset.get_raw_metadata()
         expected = load_json(EXPECTED_OUTPUT / "metadata.json")
-        expected["name"] = metadata["name"]  # expected-output file uses the un-suffixed name
+        expected["name"] = metadata[
+            "name"
+        ]  # expected-output file uses the un-suffixed name
         assert_subset(expected, actual, context="Dandiset metadata")
     finally:
         dandiset.delete()
@@ -94,7 +104,11 @@ def test_add_owners_only_adds(sandbox_client):
     metadata = _unique_metadata()
 
     dandiset = dandiset_setup.create_dandiset(
-        sandbox_client, metadata["name"], metadata["description"], embargo=False, dry_run=False
+        sandbox_client,
+        metadata["name"],
+        metadata["description"],
+        embargo=False,
+        dry_run=False,
     )
     try:
         before = dandiset_setup.get_owners(sandbox_client, dandiset.identifier)

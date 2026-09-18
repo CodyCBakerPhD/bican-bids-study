@@ -112,7 +112,9 @@ def update_metadata(
     if not changed:
         print(f"Metadata for {dandiset.identifier}: already up to date")
         return
-    print(f"Updating metadata for {dandiset.identifier}; changed keys: {', '.join(changed)}")
+    print(
+        f"Updating metadata for {dandiset.identifier}; changed keys: {', '.join(changed)}"
+    )
     if dry_run:
         print("  [dry-run] not written")
         return
@@ -167,7 +169,8 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--users", type=Path, help="Path to a users TSV file")
     parser.add_argument("--name", help="Dandiset name (overrides 'name' in --metadata)")
     parser.add_argument(
-        "--description", help="Dandiset description (overrides 'description' in --metadata)"
+        "--description",
+        help="Dandiset description (overrides 'description' in --metadata)",
     )
     parser.add_argument(
         "--embargo", action="store_true", help="Create the new Dandiset as embargoed"
@@ -214,9 +217,13 @@ def main(argv: list[str] | None = None) -> int:
         created = create_dandiset(
             client, name, description, embargo=args.embargo, dry_run=args.dry_run
         )
-        if created is None:  # dry run: nothing else can be applied to a nonexistent Dandiset
+        if (
+            created is None
+        ):  # dry run: nothing else can be applied to a nonexistent Dandiset
             if metadata:
-                print(f"[dry-run] would apply metadata keys: {', '.join(sorted(metadata))}")
+                print(
+                    f"[dry-run] would apply metadata keys: {', '.join(sorted(metadata))}"
+                )
             if usernames:
                 print(f"[dry-run] would add owners: {usernames}")
             return 0
