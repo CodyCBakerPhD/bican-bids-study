@@ -1,0 +1,33 @@
+name: dandiset_setup.py sandbox tests
+
+on:
+  pull_request:
+    paths:
+      - "scripts/**"
+      - ".github/workflows/dandiset-setup-sandbox-tests.yml"
+  push:
+    branches: [main]
+    paths:
+      - "scripts/**"
+  workflow_dispatch: {}
+
+jobs:
+  sandbox-tests:
+    runs-on: ubuntu-latest
+    # Secrets aren't available to pull requests from forks; the tests skip
+    # themselves (rather than failing) when DANDI_SANDBOX_API_KEY is unset,
+    # so this job still runs and passes in that case, with nothing exercised.
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - run: pip install -r scripts/requirements-dev.txt
+
+      - name: Run expected-output tests against the DANDI sandbox
+        env:
+          DANDI_SANDBOX_API_KEY: ${{ secrets.DANDI_SANDBOX_API_KEY }}
+          DANDI_SANDBOX_TEST_USERNAME: ${{ secrets.DANDI_SANDBOX_TEST_USERNAME }}
+        run: pytest scripts/tests -v
