@@ -1,0 +1,27 @@
+{
+  "participant_id": {
+    "Description": "A unique identifier for this participant (Donor) at DANDI, of the form sub-<label>; the label is the Allen Institute LIMS donor specimen ID.",
+    "LongName": "Participant ID"
+  },
+  "species_name": {
+    "Description": "The scientific name of the species of the participant.",
+    "LongName": "Species Name"
+  },
+  "species_ncbi_taxon": {
+    "Description": "The NCBI Taxonomy identifier for the species of the participant.",
+    "LongName": "Species NCBI Taxon"
+  },
+  "sex_at_birth": {
+    "Description": "Sex of the participant.",
+    "Levels": {
+      "Male": "male",
+      "Female": "female"
+    },
+    "LongName": "Sex at Birth"
+  },
+  "age": {
+    "Description": "Age of the participant (Donor).",
+    "Units": "year",
+    "LongName": "Age"
+  }
+}

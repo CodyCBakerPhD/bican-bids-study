@@ -1,0 +1,11 @@
+# dandi-cli's local copy of the Dandiset metadata; never uploaded as an asset
+dandiset.yaml
+# BICAN tables that are not (yet) part of the BIDS specification
+mapping.tsv
+mapping.json
+datasets.tsv
+datasets.json
+# A "study" dataset has no sub-* directories at its root (they live under
+# sourcedata/raw/), so the validator's participant_id cross-check cannot pass here
+participants.tsv
+participants.json
