@@ -44,10 +44,9 @@ import pytest
 sys.path.insert(
     0, str(Path(__file__).resolve().parents[1])
 )  # for `import dandiset_setup`
-import dandiset_setup  # noqa: E402
-from dandi.dandiapi import DandiAPIClient  # noqa: E402
-
-from _helpers import EXPECTED_OUTPUT, FIXTURES, assert_subset, load_json  # noqa: E402
+import dandiset_setup
+from _helpers import EXPECTED_OUTPUT, FIXTURES, assert_subset, load_json
+from dandi.dandiapi import DandiAPIClient
 
 pytestmark = pytest.mark.skipif(
     not os.environ.get("DANDI_SANDBOX_API_KEY"),

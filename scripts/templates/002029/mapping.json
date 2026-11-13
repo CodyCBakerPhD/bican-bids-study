@@ -1,0 +1,46 @@
+{
+  "session_id": {
+    "Description": "A session identifier of the form ses-<label>, indicating the recording session (NWB file) for this cell in the dataset.",
+    "LongName": "Session ID"
+  },
+  "participant_id": {
+    "Description": "The participant (Donor) this cell came from, of the form sub-<label>. Corresponds to participant_id in participants.tsv.",
+    "LongName": "Participant ID"
+  },
+  "cell_specimen_id": {
+    "Description": "Allen Institute LIMS specimen identifier of the recorded cell.",
+    "LongName": "Cell Specimen ID"
+  },
+  "dissociated_cell_sample_local_name": {
+    "Description": "Human-readable local name of the Dissociated Cell Sample (the recorded cell).",
+    "LongName": "Dissociated Cell Sample Local Name"
+  },
+  "brain_structure_acronym_dhba": {
+    "Description": "Acronym, in the Developing Human Brain Atlas (DHBA) ontology, of the brain structure the recorded cell was located in.",
+    "LongName": "Brain Structure Acronym (DHBA)"
+  },
+  "patched_cell_container": {
+    "Description": "Allen Institute LIMS name of the container holding the patched cell's extracted contents.",
+    "LongName": "Patched Cell Container"
+  },
+  "exp_component_name": {
+    "Description": "Allen Institute LIMS name of the sequencing experiment component for this cell.",
+    "LongName": "Experiment Component Name"
+  },
+  "library_prep": {
+    "Description": "Allen Institute LIMS name of the sequencing library preparation for this cell.",
+    "LongName": "Library Prep"
+  },
+  "dandi_file_url": {
+    "Description": "DANDI Archive asset download URL for the NWB data file associated with this session in this dataset.",
+    "LongName": "DANDI File URL"
+  },
+  "source_dandiset_id": {
+    "Description": "The source Dandiset the NWB file was originally uploaded to. Corresponds to dandiset_id in datasets.tsv.",
+    "LongName": "Source Dandiset ID"
+  },
+  "source_dandi_file_url": {
+    "Description": "DANDI Archive asset download URL for the same NWB file in its source Dandiset.",
+    "LongName": "Source DANDI File URL"
+  }
+}
